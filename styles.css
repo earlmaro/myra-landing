@@ -67,13 +67,6 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-}
-
-.logo-img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
 }
 
 .logo h1 {
@@ -81,7 +74,15 @@ body {
     color: var(--primary-color);
     font-weight: 700;
     margin: 0;
-    line-height: 1;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 400;
+    display: block;
+    margin-top: 0.125rem;
 }
 
 .nav-links {
