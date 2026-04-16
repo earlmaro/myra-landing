@@ -13,7 +13,13 @@ This landing page is designed for:
 ## Features
 
 - ✅ Development notice banner (indicates app is in active development)
+- ✅ Myra logo in header (from myra-icon.svg)
 - ✅ Professional hero section with clear value proposition
+- ✅ **Waitlist modal** with form (collects user interest)
+  - Name, email, company, phone, team size, use case
+  - Client-side only (no backend, no data storage)
+  - Success page after submission
+  - Smooth animations and transitions
 - ✅ Feature showcase (6 key features)
 - ✅ How it works (3-step process)
 - ✅ Integration highlights
@@ -24,10 +30,11 @@ This landing page is designed for:
 
 ## Tech Stack
 
-- **Pure HTML & CSS** - No frameworks, no build process
+- **Pure HTML, CSS & Vanilla JavaScript** - No frameworks, no build process
 - **Tailwind-inspired custom CSS** - Clean, modern design
 - **Responsive Grid Layout** - Works on all devices
 - **Zero Dependencies** - Fast loading, easy deployment
+- **Client-side only** - Waitlist form doesn't submit data anywhere (by design)
 
 ## Files
 
