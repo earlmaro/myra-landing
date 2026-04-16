@@ -33,7 +33,7 @@
                     <a href="#features">Features</a>
                     <a href="#how-it-works">How It Works</a>
                     <a href="#about">About</a>
-                    <button onclick="openWaitlist()" class="btn-primary">Join Waitlist</button>
+                    <span class="waitlist-badge">Waitlist Opening Soon</span>
                 </nav>
             </div>
         </div>
@@ -50,7 +50,10 @@
                     deliver exceptional support—all from one place.
                 </p>
                 <div class="hero-buttons">
-                    <button onclick="openWaitlist()" class="btn-primary btn-large">Join the Waitlist</button>
+                    <div class="waitlist-message">
+                        <span class="waitlist-pill">✨ Waitlist Opening Soon</span>
+                        <p class="waitlist-subtext">Be the first to know when we launch</p>
+                    </div>
                     <a href="#how-it-works" class="btn-secondary btn-large">See How It Works</a>
                 </div>
                 <div class="hero-stats">
@@ -214,7 +217,10 @@
         <div class="container">
             <h2>Ready to Transform Your Customer Conversations?</h2>
             <p>Be among the first to experience Myra when we launch</p>
-            <button onclick="openWaitlist()" class="btn-primary btn-large">Join the Waitlist</button>
+            <div class="cta-waitlist">
+                <span class="waitlist-pill-large">✨ Waitlist Opening Soon</span>
+                <p class="cta-waitlist-text">Stay tuned for early access opportunities</p>
+            </div>
         </div>
     </section>
 
@@ -256,7 +262,7 @@
                     <ul>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#" onclick="openWaitlist(); return false;">Join Waitlist</a></li>
+                        <li><span class="footer-waitlist">Waitlist Opening Soon</span></li>
                     </ul>
                 </div>
 
@@ -282,124 +288,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Waitlist Modal -->
-    <div id="waitlistModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeWaitlist()">&times;</span>
-
-            <!-- Waitlist Form -->
-            <div id="waitlistForm" class="waitlist-form">
-                <h2>Join the Waitlist</h2>
-                <p class="modal-subtitle">Be the first to know when Myra launches. Get exclusive early access.</p>
-
-                <form onsubmit="submitWaitlist(event)">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@company.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" placeholder="Your Company">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="teamSize">Team Size</label>
-                        <select id="teamSize" name="teamSize">
-                            <option value="">Select team size</option>
-                            <option value="1-5">1-5 people</option>
-                            <option value="6-20">6-20 people</option>
-                            <option value="21-50">21-50 people</option>
-                            <option value="51-200">51-200 people</option>
-                            <option value="200+">200+ people</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="useCase">What will you use Myra for?</label>
-                        <textarea id="useCase" name="useCase" rows="3" placeholder="Tell us about your use case (optional)"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-large btn-full">Join the Waitlist</button>
-                </form>
-            </div>
-
-            <!-- Success Message -->
-            <div id="waitlistSuccess" class="waitlist-success" style="display: none;">
-                <div class="success-icon">✓</div>
-                <h2>You're on the list!</h2>
-                <p class="success-message">
-                    Thank you for your interest in Myra. We'll notify you as soon as we're ready to launch.
-                </p>
-                <p class="success-details">
-                    We're working hard to build something amazing. Expect to hear from us soon!
-                </p>
-                <button onclick="closeWaitlist()" class="btn-secondary btn-large">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Open waitlist modal
-        function openWaitlist() {
-            document.getElementById('waitlistModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close waitlist modal
-        function closeWaitlist() {
-            document.getElementById('waitlistModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-
-            // Reset form and views after a delay
-            setTimeout(function() {
-                document.getElementById('waitlistForm').style.display = 'block';
-                document.getElementById('waitlistSuccess').style.display = 'none';
-                document.querySelector('form').reset();
-            }, 300);
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('waitlistModal');
-            if (event.target == modal) {
-                closeWaitlist();
-            }
-        }
-
-        // Handle form submission
-        function submitWaitlist(event) {
-            event.preventDefault();
-
-            // Get form data (not saving anywhere, just for demo)
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company').value,
-                phone: document.getElementById('phone').value,
-                teamSize: document.getElementById('teamSize').value,
-                useCase: document.getElementById('useCase').value,
-                timestamp: new Date().toISOString()
-            };
-
-            // Log to console (for demo purposes)
-            console.log('Waitlist submission (not saved):', formData);
-
-            // Show success message
-            document.getElementById('waitlistForm').style.display = 'none';
-            document.getElementById('waitlistSuccess').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
