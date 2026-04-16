@@ -130,13 +130,13 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--white);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--white);
+    color: var(--primary-color);
 }
 
 .btn-large {
