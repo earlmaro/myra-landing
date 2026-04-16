@@ -67,27 +67,21 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.625rem;
 }
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
 }
 
 .logo h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     font-weight: 700;
     margin: 0;
-}
-
-.tagline {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    font-weight: 400;
-    display: block;
+    line-height: 1;
 }
 
 .nav-links {
@@ -555,6 +549,7 @@ section {
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s;
+    box-sizing: border-box;
 }
 
 @keyframes slideUp {
@@ -584,6 +579,10 @@ section {
     color: var(--text-dark);
 }
 
+.waitlist-form {
+    width: 100%;
+}
+
 .waitlist-form h2 {
     font-size: 2rem;
     color: var(--text-dark);
@@ -596,8 +595,13 @@ section {
     font-size: 1rem;
 }
 
+.waitlist-form form {
+    width: 100%;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .form-group label {
@@ -618,6 +622,8 @@ section {
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    display: block;
 }
 
 .form-group input:focus,
